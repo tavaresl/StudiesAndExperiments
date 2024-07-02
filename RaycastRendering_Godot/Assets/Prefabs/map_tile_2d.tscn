@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://co062i3tbg2id"]
+
+[ext_resource type="Texture2D" uid="uid://8oimkt6idk87" path="res://Assets/Textures/MediumGray.png" id="1_7sjnu"]
+
+[node name="MapTile2D" type="Sprite2D"]
+texture = ExtResource("1_7sjnu")

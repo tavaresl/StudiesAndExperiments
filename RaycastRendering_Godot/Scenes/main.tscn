@@ -1,0 +1,33 @@
+[gd_scene load_steps=8 format=3 uid="uid://cp08jctey8vlq"]
+
+[ext_resource type="Script" path="res://Scripts/SceneManager.cs" id="1_4tgjx"]
+[ext_resource type="Script" path="res://Scripts/MapManager.cs" id="2_6ao41"]
+[ext_resource type="PackedScene" uid="uid://co062i3tbg2id" path="res://Assets/Prefabs/map_tile_2d.tscn" id="3_06r2h"]
+[ext_resource type="PackedScene" uid="uid://erpwfk6r3567" path="res://Assets/Prefabs/wall.tscn" id="4_m4on2"]
+[ext_resource type="PackedScene" uid="uid://nvlif2qxovqp" path="res://Assets/Prefabs/floor.tscn" id="5_1kxl0"]
+[ext_resource type="PackedScene" uid="uid://vmfwk5lg1pyv" path="res://Assets/Prefabs/player.tscn" id="6_hnkry"]
+[ext_resource type="Script" path="res://Scripts/WallsRenderer.cs" id="7_ijb36"]
+
+[node name="SceneManager" type="Node"]
+script = ExtResource("1_4tgjx")
+metadata/_edit_vertical_guides_ = [-2729.0, -811.0]
+
+[node name="MapManager" type="Node2D" parent="."]
+script = ExtResource("2_6ao41")
+TilePrefab = ExtResource("3_06r2h")
+WallPrefab = ExtResource("4_m4on2")
+FloorPrefab = ExtResource("5_1kxl0")
+
+[node name="Player" parent="." node_paths=PackedStringArray("VisionCamera") instance=ExtResource("6_hnkry")]
+position = Vector2(20, 291.5)
+VisionCamera = NodePath("../Camera2D")
+FieldOfView = 45.0
+ViewDistance = 47.7
+CameraPlaneDistance = 0.0
+Speed = 40.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(960, 540)
+
+[node name="WallsRenderer" type="Node2D" parent="Camera2D"]
+script = ExtResource("7_ijb36")

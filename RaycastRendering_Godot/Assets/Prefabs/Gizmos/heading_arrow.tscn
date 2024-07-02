@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://v27vt3hpmou4"]
+
+[ext_resource type="Script" path="res://Scripts/Gizmos/HeadingArrow.cs" id="1_c21m7"]
+
+[node name="HeadingArrow" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_c21m7")
+Color = Color(0.563699, 0.350031, 1, 0.592157)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(-1, 0)
+color = Color(0.563699, 0.350031, 1, 0.592157)
+offset = Vector2(80, 2.08165e-12)
+polygon = PackedVector2Array(8, 2.08165e-12, 2.08165e-12, -4, 2.08165e-12, 4)
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 79, 2.08165e-12)
+width = 2.0
+default_color = Color(0.563699, 0.350031, 1, 0.592157)

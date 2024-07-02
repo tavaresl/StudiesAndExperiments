@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://erpwfk6r3567"]
+
+[ext_resource type="Texture2D" uid="uid://8oimkt6idk87" path="res://Assets/Textures/MediumGray.png" id="1_al41p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l68v5"]
+size = Vector2(128, 128)
+
+[node name="Wall" type="Sprite2D"]
+self_modulate = Color(0, 0, 0, 1)
+scale = Vector2(0.078, 0.078)
+texture = ExtResource("1_al41p")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 30
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_l68v5")

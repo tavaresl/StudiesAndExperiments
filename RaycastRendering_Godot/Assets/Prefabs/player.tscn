@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://vmfwk5lg1pyv"]
+
+[ext_resource type="Script" path="res://Scripts/Player/Player.cs" id="1_usf25"]
+[ext_resource type="Script" path="res://Scripts/Player/PlayerVision.cs" id="2_ct5c0"]
+[ext_resource type="PackedScene" uid="uid://cs2rkvl3qxase" path="res://Assets/Prefabs/wall_detector.tscn" id="3_f6rx2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ytky0"]
+radius = 5.0
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+motion_mode = 1
+script = ExtResource("1_usf25")
+FieldOfView = 96.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ytky0")
+
+[node name="Vision" type="Node2D" parent="."]
+rotation = -1.5708
+script = ExtResource("2_ct5c0")
+WallDetectorRaycast2D = ExtResource("3_f6rx2")
+FieldOfView = 96.5
+ViewDistance = 256.0
